@@ -1,0 +1,43 @@
+Microsoft Windows [版本 10.0.26100.4061]
+(c) Microsoft Corporation。保留所有权利。
+
+(pemfc_degradation) D:\part-time-job\0044>C:/ProgramData/anaconda3/envs/pemfc_degradation/python.exe d:/part-time-job/0044/main_model_pipeline.py
+从以下位置运行 main_model_pipeline.py: d:\part-time-job\0044
+当前工作目录: D:\part-time-job\0044
+启动纯 Python 模型流水线...
+
+--- 运行 Python 孔隙模型 ---
+输入: I/C 比=0.8, 亲疏水性=hydrophobic, 颗粒大小=50
+占位符: Python 孔隙模型逻辑应在此处实现。
+输出: XHO 大小=0.5, XCCL=0.6, Pt 覆盖度=0.7
+
+--- 运行 Python 高速剪切模型 ---
+输入: 整体孔隙率 (XCCL)=0.6, 初始颗粒大小=50
+占位符: Python 高速剪切模型逻辑应在此处实现。
+输出: 剪切速率=1000, 剪切能量=500
+
+--- 运行 Python 蒸发偏析模型 (内联代码) ---
+输入 (需要转换为模型参数): 整体孔隙率 (XCCL)=0.6, 初始颗粒大小=50
+模型输入 (转换后/示例): Pe1=0.18, Pe2=0.37, E=1, N=6
+Solver status (Pe1=0.18, Pe2=0.37): 1 - A termination event occurred.
+Time points evaluated: [0.17 0.34]
+输出 (示例): 蒸发干燥参数={'final_phi1_distribution': [0.114, 0.11269925158156667, 0.11573522823386029, 0.11605347694454374, 0.11848520458921828, 0.12035595885658375], 'final_phi2_distribution': [0.108, 0.11382782672100795, 0.11347417939105356, 0.11892363327427563, 0.12916806239935077, 0.15193101437304932], 'time_points_evaluated': [0.17, 0.34, 0.51, 0.683], 'solver_message': 'A termination event occurred.'}
+
+--- 运行 Python 龟裂模型 ---
+输入: I/C 比=0.8, 亲疏水性=hydrophobic, 颗粒大小=50
+占位符: Python 龟裂模型逻辑应在此处实现。
+输出: 实际厚度=10.0, 是否有龟裂=False
+
+--- 用于未来发电模型的参数 (纯 Python 流水线) ---
+疏水性二级孔隙 (XHO 大小): 0.5
+整体孔隙率 (XCCL): 0.6
+铂金覆盖程度: 0.7
+催化剂层实际厚度: 10.0
+剪切速率: 1000
+剪切能量: 500
+蒸发干燥参数: {'final_phi1_distribution': [0.114, 0.11269925158156667, 0.11573522823386029, 0.11605347694454374, 0.11848520458921828, 0.12035595885658375], 'final_phi2_distribution': [0.108, 0.11382782672100795, 0.11347417939105356, 0.11892363327427563, 0.12916806239935077, 0.15193101437304932], 'time_points_evaluated': [0.17, 0.34, 0.51, 0.683], 'solver_message': 'A termination event occurred.'}
+是否有龟裂: False
+
+纯 Python 模型流水线执行完毕。
+
+(pemfc_degradation) D:\part-time-job\0044>
